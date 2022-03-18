@@ -1,0 +1,29 @@
+<div class="user">
+  <div *ngIf="user" class="card">
+    <div *ngIf="!fullDetails" class="userDetails">
+      <p>{{  user.name }} ({{ user.username }}) ID: {{ user.id }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Phone: {{ user.phone }}</p>
+      <p>Website: {{ user.website }}</p>
+    </div>
+    <div *ngIf="fullDetails" class="fullDetails">
+      <div class="company">
+        <h3>{{ user.company.name }}</h3>
+        <h4>{{ user.company.bs }}</h4>
+        <h4>{{ user.company.catchPhrase }}</h4>
+      </div>
+      <p>City: {{ user.address.city }}</p>
+      <p>Street: {{ user.address.street }}</p>
+      <p>Suite: {{ user.address.suite }}</p>
+      <p>Zipcode: {{ user.address.zipcode }}</p>
+      <p>Lat: {{ user.address.geo.lat }} Lng: {{ user.address.geo.lng }}</p>
+    </div>
+    <div>
+      <button mat-raised-button (click)="visitPosts(user)">Visit Posts</button>
+      <button mat-raised-button (click)="showDetails()">Show Details</button>
+    </div>
+  </div>
+  <div *ngIf="!user" class="user-unavailable">
+    <h1>No users found</h1>
+  </div>
+</div>

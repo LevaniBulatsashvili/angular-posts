@@ -1,0 +1,14 @@
+.posts {
+  background-color: rgb(240, 162, 16);
+  padding: 3rem;
+  .post {
+    background-color: rgb(241, 123, 12);
+    .title {
+      padding: 2rem;
+      text-align: center;
+    }
+    p {
+      padding: 2rem;
+    }
+  }
+}

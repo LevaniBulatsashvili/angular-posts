@@ -1,0 +1,17 @@
+.users {
+  background-color: rgb(240, 162, 16);
+  padding: 2rem 0;
+  .user {
+    text-align: center;
+    button {
+      color: white;
+      background-color: rgb(241, 123, 12);
+      min-width: 16rem;
+      height: 3rem;
+      margin: 1rem 0;
+    }
+    button:hover {
+      color: rgb(240, 162, 16);
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<div class="users">
+  <div *ngFor="let user of users" class="user">
+    <button mat-raised-button color="primary" (click)="visitUser(user)">{{ user.name }}</button>
+  </div>
+</div>
+
