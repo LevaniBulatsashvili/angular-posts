@@ -20,7 +20,7 @@
     </div>
     <div>
       <button mat-raised-button (click)="visitPosts(user)">Visit Posts</button>
-      <button mat-raised-button (click)="showDetails()">Show Details</button>
+      <button mat-raised-button (click)="showDetails()">{{ details }}</button>
     </div>
   </div>
   <div *ngIf="!user" class="user-unavailable">

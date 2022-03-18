@@ -14,6 +14,7 @@ export class HttpRequestsService {
   constructor(private http: HttpClient) {}
 
   fetchUsers(): Observable<UserInterface[]> {
+    // fetches users from the server
     return this.http.get<UserInterface[]>('https://jsonplaceholder.typicode.com/users');
   }
 
@@ -26,6 +27,7 @@ export class HttpRequestsService {
   }
 
   fetchPosts(user: UserInterface) {
+    // fetches posts from the server
     this.posts = this.http.get<PostInterface[]>(`https://jsonplaceholder.typicode.com/users/${user.id}/posts`);
   }
 

@@ -14,9 +14,11 @@ export class MainPageComponent implements OnInit {
   constructor(private httpService: HttpRequestsService, private router: Router) {}
 
   ngOnInit(): void {
+    // this sends http request to the server to recieve data
     this.httpService.fetchUsers().subscribe( data => this.users = data );
   }
 
+  // navigates to the user page
   visitUser(user: UserInterface) {
     this.httpService.setUser(user);
     this.router.navigate(['user']);

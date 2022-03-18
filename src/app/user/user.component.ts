@@ -11,20 +11,24 @@ import { UserInterface } from '../interface/user.interface';
 export class UserComponent implements OnInit {
   user!: UserInterface;
   fullDetails: boolean = false;
+  details: string = 'Show Details';
 
   constructor(private httpService: HttpRequestsService, private router: Router) { }
 
   ngOnInit(): void {
+    // gets the selected user from httpRequestsService
     this.user = this.httpService.getUser();
-    console.log(this.user);
   }
 
   visitPosts(user: UserInterface) {
+    // navigates to posts page and fetches the posts inside HttpRequestsService
     this.httpService.fetchPosts(user);
     this.router.navigate(['posts']);
   }
 
   showDetails() {
+    // reveals extra information about the user
     this.fullDetails = !this.fullDetails;
+    this.details === 'Show Details'? this.details = 'Hide Details' : this.details = 'Show Details';
   }
 }

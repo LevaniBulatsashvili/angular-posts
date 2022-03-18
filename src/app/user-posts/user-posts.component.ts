@@ -14,7 +14,9 @@ export class UserPostsComponent implements OnInit {
   constructor(private httpService: HttpRequestsService, private router: Router) { }
 
   ngOnInit(): void {
-    const getPosts = this.httpService.getPosts()
+    // gets stored posts of the chosen user from HttpRequestsService
+    const getPosts = this.httpService.getPosts();
+    // handles if user refreshes the page and deletes the data (note: could have also tried to store data in the local storage)
     if(getPosts === undefined) {
       this.router.navigate(['/']);
     } else {
